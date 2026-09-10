@@ -1,0 +1,5 @@
+__pycache__/
+tmp/
+backups/
+*.pdf.tmp
+output/pdf/* - обновлено.pdf

@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Резюме 1С</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #f6f7f4;
+      --text: #17211b;
+      --muted: #5d685f;
+      --line: #d8ded7;
+      --green: #1f7a4c;
+      --yellow: #f3c94c;
+      font-family: Arial, sans-serif;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background: var(--bg);
+      color: var(--text);
+      display: grid;
+      place-items: center;
+      padding: 32px 16px;
+    }
+    main {
+      width: min(720px, 100%);
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 28px;
+      box-shadow: 0 18px 45px rgba(18, 31, 23, .08);
+    }
+    h1 {
+      margin: 0 0 8px;
+      font-size: clamp(28px, 5vw, 42px);
+      line-height: 1.05;
+      letter-spacing: 0;
+    }
+    p {
+      margin: 0 0 22px;
+      color: var(--muted);
+      font-size: 16px;
+      line-height: 1.5;
+    }
+    .links {
+      display: grid;
+      gap: 12px;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    }
+    a {
+      display: block;
+      border: 1px solid var(--line);
+      border-left: 6px solid var(--green);
+      border-radius: 8px;
+      padding: 16px 18px;
+      color: var(--text);
+      text-decoration: none;
+      font-weight: 700;
+    }
+    a:hover, a:focus {
+      border-color: var(--green);
+      outline: 3px solid rgba(31, 122, 76, .16);
+    }
+    span {
+      display: block;
+      margin-top: 6px;
+      color: var(--muted);
+      font-size: 14px;
+      font-weight: 400;
+    }
+    .mark {
+      display: inline-block;
+      margin-bottom: 18px;
+      padding: 5px 8px;
+      border-radius: 6px;
+      background: var(--yellow);
+      font-weight: 700;
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <div class="mark">1С</div>
+    <h1>Резюме разработчика 1С</h1>
+    <p>Две актуальные версии PDF. Ссылки остаются теми же после обновления исходного JSON и публикации в GitHub Pages.</p>
+    <div class="links">
+      <a href="./resume-1c-junior.pdf">Junior / Middle<span>Версия с одним годом опыта</span></a>
+      <a href="./resume-1c-senior.pdf">Middle / Senior<span>Версия с тремя годами опыта</span></a>
+    </div>
+  </main>
+</body>
+</html>
