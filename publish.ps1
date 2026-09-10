@@ -53,7 +53,7 @@ if ($remoteUrl -match "github\.com[:/](?<owner>[^/]+)/(?<repo>[^/.]+)(\.git)?$")
 }
 
 Write-Host ""
-Write-Host "После завершения GitHub Actions ссылки останутся теми же:"
+Write-Host "Links after GitHub Actions finishes:"
 if ($pagesPath) {
   Write-Host "$pagesPath/resume-1c.pdf"
   Write-Host "$pagesPath/resume-1c-developer.pdf"
