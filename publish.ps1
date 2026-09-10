@@ -33,8 +33,8 @@ if ($LASTEXITCODE -ne 0) {
 git status --short
 git add resume_data.json build.py build.cmd requirements.txt README.md assets public .github publish.ps1 .gitignore
 
-$pending = git status --porcelain
-if (-not $pending) {
+git diff --cached --quiet
+if ($LASTEXITCODE -eq 0) {
   Write-Host "Нет изменений для публикации."
   exit 0
 }

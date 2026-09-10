@@ -141,14 +141,14 @@ npx skills add paramchoudhary/resumeskills --skill creative-portfolio-resume
 После настройки ссылки будут такими:
 
 ```text
-https://<github-user>.github.io/<repo>/resume-1c-junior.pdf
-https://<github-user>.github.io/<repo>/resume-1c-senior.pdf
+https://skala05reg.github.io/cv/resume-1c-junior.pdf
+https://skala05reg.github.io/cv/resume-1c-senior.pdf
 ```
 
 Страница с выбором двух версий:
 
 ```text
-https://<github-user>.github.io/<repo>/
+https://skala05reg.github.io/cv/
 ```
 
 Первые действия в PowerShell из этой папки:
