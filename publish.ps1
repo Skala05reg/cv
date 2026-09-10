@@ -42,7 +42,20 @@ if ($LASTEXITCODE -eq 0) {
 git commit -m $Message
 git push
 
+$remoteUrl = git remote get-url origin
+$pagesPath = $null
+if ($remoteUrl -match "github\.com[:/](?<owner>[^/]+)/(?<repo>[^/.]+)(\.git)?$") {
+  $owner = $Matches.owner.ToLowerInvariant()
+  $repo = $Matches.repo
+  $pagesPath = "https://$owner.github.io/$repo"
+}
+
 Write-Host ""
 Write-Host "После завершения GitHub Actions ссылки останутся теми же:"
-Write-Host "https://<github-user>.github.io/<repo>/resume-1c-junior.pdf"
-Write-Host "https://<github-user>.github.io/<repo>/resume-1c-senior.pdf"
+if ($pagesPath) {
+  Write-Host "$pagesPath/resume-1c-junior.pdf"
+  Write-Host "$pagesPath/resume-1c-senior.pdf"
+} else {
+  Write-Host "https://<github-user>.github.io/<repo>/resume-1c-junior.pdf"
+  Write-Host "https://<github-user>.github.io/<repo>/resume-1c-senior.pdf"
+}
