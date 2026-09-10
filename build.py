@@ -34,8 +34,12 @@ PUBLIC_OUTPUT = ROOT / "public"
 FONT_DIR = ROOT / "assets" / "fonts"
 PAGE_W, PAGE_H = A4
 PUBLIC_FILENAMES = {
-    "junior": "resume-1c-junior.pdf",
-    "senior": "resume-1c-senior.pdf",
+    "junior": "resume-1c.pdf",
+    "senior": "resume-1c-developer.pdf",
+}
+PUBLIC_ALIASES = {
+    "junior": ("resume-1c-junior.pdf",),
+    "senior": ("resume-1c-senior.pdf",),
 }
 
 
@@ -512,6 +516,8 @@ def main():
         report["output_filename"] = target.name
         public_name = PUBLIC_FILENAMES[key]
         (PUBLIC_OUTPUT / public_name).write_bytes(pdf_bytes)
+        for alias in PUBLIC_ALIASES.get(key, ()):
+            (PUBLIC_OUTPUT / alias).write_bytes(pdf_bytes)
         report["public_filename"] = public_name
         (OUTPUT / f"{key}.txt").write_text(extracted, encoding="utf-8")
         (PUBLIC_OUTPUT / f"{key}.txt").write_text(extracted, encoding="utf-8")

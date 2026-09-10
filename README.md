@@ -129,8 +129,10 @@ npx skills add paramchoudhary/resumeskills --skill creative-portfolio-resume
 
 После успешной сборки дополнительно обновляются публичные копии для сайта:
 
-- `public\resume-1c-junior.pdf`
-- `public\resume-1c-senior.pdf`
+- `public\resume-1c.pdf`
+- `public\resume-1c-developer.pdf`
+- `public\resume-1c-junior.pdf` - старый алиас для совместимости
+- `public\resume-1c-senior.pdf` - старый алиас для совместимости
 
 Эти имена специально короткие и стабильные для ссылок в Telegram. Локальные PDF с русскими именами в `output\pdf` остаются для просмотра и архива.
 
@@ -141,8 +143,8 @@ npx skills add paramchoudhary/resumeskills --skill creative-portfolio-resume
 После настройки ссылки будут такими:
 
 ```text
-https://skala05reg.github.io/cv/resume-1c-junior.pdf
-https://skala05reg.github.io/cv/resume-1c-senior.pdf
+https://skala05reg.github.io/cv/resume-1c.pdf
+https://skala05reg.github.io/cv/resume-1c-developer.pdf
 ```
 
 Страница с выбором двух версий:
@@ -172,7 +174,14 @@ cd "F:\Курсы 1С\Собеседования\Резюме 1С"
 .\publish.ps1 -Message "Update resume text"
 ```
 
-Скрипт пересоберёт оба PDF, покажет git-статус, сделает commit и push. После завершения GitHub Actions старые ссылки начнут отдавать новые PDF. Если нужно обновить только локальные файлы без публикации, запускай обычный `build.cmd`.
+Если команда запускается из обычного `cmd.exe`, используй обёртку:
+
+```bat
+cd /d "F:\Курсы 1С\Собеседования\Резюме 1С"
+publish.cmd -Message "Update resume text"
+```
+
+Скрипт пересоберёт оба PDF, покажет git-статус, сделает commit и push. После завершения GitHub Actions постоянные ссылки начнут отдавать новые PDF. Если нужно обновить только локальные файлы без публикации, запускай обычный `build.cmd`.
 
 Важно: GitHub Pages публикует сайт в интернет. Даже если репозиторий приватный и тариф позволяет Pages для приватного репозитория, сам Pages-сайт может быть доступен публично. Не выкладывай туда телефон, email, Telegram или биографические детали, которые не готов отправлять всем по ссылке.
 

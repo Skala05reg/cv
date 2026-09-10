@@ -31,7 +31,7 @@ if ($LASTEXITCODE -ne 0) {
 }
 
 git status --short
-git add resume_data.json build.py build.cmd requirements.txt README.md assets public .github publish.ps1 .gitignore
+git add resume_data.json build.py build.cmd publish.cmd requirements.txt README.md assets public .github publish.ps1 .gitignore
 
 git diff --cached --quiet
 if ($LASTEXITCODE -eq 0) {
@@ -53,9 +53,9 @@ if ($remoteUrl -match "github\.com[:/](?<owner>[^/]+)/(?<repo>[^/.]+)(\.git)?$")
 Write-Host ""
 Write-Host "После завершения GitHub Actions ссылки останутся теми же:"
 if ($pagesPath) {
-  Write-Host "$pagesPath/resume-1c-junior.pdf"
-  Write-Host "$pagesPath/resume-1c-senior.pdf"
+  Write-Host "$pagesPath/resume-1c.pdf"
+  Write-Host "$pagesPath/resume-1c-developer.pdf"
 } else {
-  Write-Host "https://<github-user>.github.io/<repo>/resume-1c-junior.pdf"
-  Write-Host "https://<github-user>.github.io/<repo>/resume-1c-senior.pdf"
+  Write-Host "https://<github-user>.github.io/<repo>/resume-1c.pdf"
+  Write-Host "https://<github-user>.github.io/<repo>/resume-1c-developer.pdf"
 }
